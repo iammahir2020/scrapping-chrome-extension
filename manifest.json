@@ -1,0 +1,35 @@
+{
+    "name":"Profile Scraping Tool",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "icons": {
+        "128": "linkedin.png"
+     },
+    "page_action" : {
+        "default_title": "Profile Scraping Tool"
+    },
+    
+    "background": {
+        "scripts": ["background.js"]
+    },
+    
+    "content_scripts": [
+        {
+            "matches": ["https://*.linkedin.com/*"],
+            "css": ["content.css"],
+            "js": ["jquery-3.6.0.min.js","content.js"]
+        }
+    ],
+
+    "permissions": [
+        "tabs",
+        "storage",
+        "activeTab",
+        "<all_urls>"
+    ],
+
+    "web_accessible_resources": [
+        "slider.html",
+        "jquery-3.6.0.min.js"
+    ]
+}
